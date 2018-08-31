@@ -5,10 +5,9 @@ var correct = 0;
 var wrong = 0;
 var notAnswered = 0;
 var answers = [];
-
-var time = 20;
 var isRunning = false;
-var timer = setInterval(startTrivia, 1000)
+var time = 20;
+var timeID;
 
 
 
@@ -26,13 +25,6 @@ function startTrivia() {
     }
 }
 
-//STOP FUNCTION IF SUBMITTING ON TIME
-function stopTimer() {
-    if (time === 0) {
-        clearInterval(timer);
-    }
-}
-
 
 //SELF INVOKED FUNCTION AT PAGE LOAD
 $(function () {
@@ -40,12 +32,56 @@ $(function () {
     $('#start').show();
 });
 
+function startTrivia() {
+    clearInterval(timeID);
+    timeID = setInterval(decrement, 1000);
+
+}
+
+
 
 $("#start").click(function () {
+
     $("#start").hide();
     $('#trivia').show();
     startTrivia();
 });
+
+function decrement() {
+    $("#counter").html("Time left: " + time + " sec.");
+    time--;
+    if (time === 0) {
+        stop();
+        // AUTO SUBMIT WHEN TIME RUNS OUT
+        answers = $("input[name='first']:checked").val();
+        answerChecker();
+
+        answers = $("input[name='second']:checked").val();
+        answerChecker();
+
+        answers = $("input[name='third']:checked").val();
+        answerChecker();
+
+        answers = $("input[name='fourth']:checked").val();
+        answerChecker();
+
+        answers = $("input[name='fifth']:checked").val();
+        answerChecker();
+
+        $("#trivia").hide();
+        $(".correct", ".wrongs", ".notAns").show();
+
+
+        $(".correct").html("Correct: " + correct);
+        $(".wrongs").html("Wrong: " + wrong);
+        $(".notAns").html("Unanswered: " + notAnswered);
+    }
+
+}
+
+function stop() {
+    clearInterval(timeID);
+}
 
 // FUNCTION FOR ANSWER CHECKER
 function answerChecker() {
@@ -61,7 +97,7 @@ function answerChecker() {
 
 //CHECK ANSWERS WHEN SUBMITTING
 $("#submit").click(function () {
-    stopTimer();
+    event.preventDefault();
 
     answers = $("input[name='first']:checked").val();
     answerChecker();
@@ -77,10 +113,10 @@ $("#submit").click(function () {
 
     answers = $("input[name='fifth']:checked").val();
     answerChecker();
-    
+
     $("#trivia").hide();
     $(".correct", ".wrongs", ".notAns").show();
-    
+
 
     $(".correct").html("Correct: " + correct);
     $(".wrongs").html("Wrong: " + wrong);

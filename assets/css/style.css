@@ -13,3 +13,17 @@ body {
 
     
  }
+
+ #start{
+     text-align: center;
+     width: 20%;
+    margin-left: 40%;
+    margin-right: 40%;
+    margin-top: 20%;
+ }
+
+ h3{
+     text-align: center;
+     background-color: rgb(244, 107, 66, 0.6);
+     background-attachment: fixed;
+ }
