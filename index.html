@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+
+<html lang="en-us">
+
+<head>
+
+    <meta charset="UTF-8">
+    <title>Trivia</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+
+
+</head>
+
+<body>
+
+    <button id="start">START</button>
+
+
+    <div id="trivia">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3"></div>
+                <div class="col-md-6 text-center font-weight-bold" id="bg">
+
+                <h1>Trivia Time!</h1>
+
+                <h3 id="counter"></h3>
+
+                <br>
+                <form id="one">Who is the first president of the United States of America?<br>
+                    <input type="radio" value="wrong" name="first">George of the Jungle<br>
+                    <input type="radio" value="wrong" name="first">George W. Bush<br>
+                    <input type="radio" value="wrong" name="first">Curious George<br>
+                    <input type="radio" value="right" name="first">George Washington
+                </form>
+
+                <br>
+                <br>
+
+                <form id="two">Which spy is from MI6? <br>
+                    <input type="radio" value="wrong" name="second">Ethan Hunt<br>
+                    <input type="radio" value="right" name="second">James Bond<br>
+                    <input type="radio" value="wrong" name="second">Jack Ryan<br>
+                    <input type="radio" value="wrong" name="second">Tom Clancy
+                </form>
+
+                <br>
+                <br>
+
+                <form id="three">Which continent is also a country? <br>
+                    <input type="radio" value="wrong" name="third">Asia<br>
+                    <input type="radio" value="wrong" name="third">Egypt<br>
+                    <input type="radio" value="right" name="third">Australia<br>
+                    <input type="radio" value="wrong" name="third">Africa
+                </form>
+
+                <br>
+                <br>
+
+                <form id="four">Which actor played the fictional character Dr. Emmett Brown in the Back to the Future trilogy?
+                    <br>
+                    <input type="radio" value="right" name="fourth">Christopher Lloyd<br>
+                    <input type="radio" value="wrong" name="fourth">Christopher Columbus<br>
+                    <input type="radio" value="wrong" name="fourth">Christopher Lambert<br>
+                    <input type="radio" value="wrong" name="fourth">Christopher Shield
+                </form>
+
+                <br>
+                <br>
+
+                <form id="fifth">What was the name of the coffee shop in the hit sitcom friends? <br>
+                    <input type="radio" value="wrong" name="fifth">Starbucks<br>
+                    <input type="radio" value="right" name="fifth">Central Perk<br>
+                    <input type="radio" value="wrong" name="fifth">Seattle's Best<br>
+                    <input type="radio" value="wrong" name="fifth">NY Coffee Co.
+                </form>
+
+                <br>
+
+
+                <button id="submit" class="mb-3">Submit</button>
+                <button id="reset" class="mb-3">Reset</button>
+                <br>
+                </div>
+                <div class="col-md-3"></div>
+            </div>
+        </div>
+    </div>
+
+    <h3 class="correct"></h3>
+    <h3 class="wrongs"></h3>
+    <h3 class="notAns"></h3>
+
+
+    <!-- jQuery -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Script -->
+    <script type="text/javascript" src="assets/javascript/app.js"></script>
+
+
+
+</body>
+
+</html>
